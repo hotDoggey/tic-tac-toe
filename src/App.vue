@@ -2,7 +2,6 @@
     <div id="website-background-image">
         <div id="main-content">
             <page_header />
-            <div>testtt</div>
             <tic_tac :timer="timer" :currentlyResettingAll="currentlyResettingAll" @winnerFound="presentWinner" @finishedResetting="toggleResettingAll" :togglePopup="togglePopup" />
             <!-- msg="passing some message as a prop into the component" -->
             <winner_popup ref="something" @playAgainClicked="playAgain" v-show="showWinnerPopup" :popupText="popupText" :togglePopup="togglePopup" />
