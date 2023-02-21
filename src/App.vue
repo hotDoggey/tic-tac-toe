@@ -1,7 +1,7 @@
 <template>
     <div id="website-background-image">
         <div id="main-content">
-            <page_header @click="togglePopup" />
+            <page_header />
 
             <tic_tac :timer="timer" :currentlyResettingAll="currentlyResettingAll" @winnerFound="presentWinner" @finishedResetting="toggleResettingAll" :togglePopup="togglePopup" />
             <!-- msg="passing some message as a prop into the component" -->
