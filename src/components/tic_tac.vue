@@ -1,6 +1,6 @@
 <!-- This component contains the game elements, the logic for adding 
-     a symbol, and logic for checking for a winner after a symbol is
-     added. EMITTED "winnerFound"; "finishedResetting"
+    a symbol, and logic for checking for a winner after a symbol is
+    added. EMITTED "winnerFound"; "finishedResetting"
     -->
 
 <template>
