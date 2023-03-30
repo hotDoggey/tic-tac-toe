@@ -16,10 +16,6 @@ import page_header from "./components/page_header.vue";
 import winner_popup from "./components/winner_popup.vue";
 
 export default {
-    setup() {
-        return {};
-    },
-
     name: "App",
     components: {
         tic_tac,

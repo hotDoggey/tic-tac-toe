@@ -7,9 +7,25 @@
     <h1 style="margin-top: 50px">{{ `Player ${currentSymbol} is next.` }}</h1>
     <div @playAgain="resetAll" class="tic-tac-container">
         <div id="play_area" ref="play_area">
-            <div class="play-box" value="neitherXnorO" v-for="box in gridRefs" @click="addSymbol" :ref="box">
-                <img class="hidden x-image" src="..\assets\x2.png" width="69" height="69" />
-                <img class="hidden o-image" src="..\assets\o.png" width="69" height="69" />
+            <div
+                class="play-box"
+                value="neitherXnorO"
+                v-for="box in gridRefs"
+                @click="addSymbol"
+                :ref="box"
+            >
+                <img
+                    class="hidden x-image"
+                    src="..\assets\x2.png"
+                    width="69"
+                    height="69"
+                />
+                <img
+                    class="hidden o-image"
+                    src="..\assets\o.png"
+                    width="69"
+                    height="69"
+                />
                 <div @winnerFound="somethingToo"></div>
             </div>
         </div>
@@ -75,7 +91,9 @@ export default {
                     // 4. toggle current symbol
                     this.currentSymbol = this.currentSymbol == `x` ? `o` : `x`;
                 } else if (this.debug) {
-                    console.log(`there is already a symbol (${clickedBox.classList}) in this box, so not adding currentSymbol (${this.currentSymbol})`);
+                    console.log(
+                        `there is already a symbol (${clickedBox.classList}) in this box, so not adding currentSymbol (${this.currentSymbol})`
+                    );
                 }
             }
         },
@@ -87,7 +105,9 @@ export default {
             [...boxes].forEach((box) => {
                 // if x, add x; if o add o
                 if (box.value) {
-                    box.querySelector(`.${box.value}-image`).classList.remove(`hidden`);
+                    box.querySelector(`.${box.value}-image`).classList.remove(
+                        `hidden`
+                    );
                 }
             });
         },
@@ -109,16 +129,22 @@ export default {
                     if (one === two && one === three) {
                         // only if no winner yet
                         if (!this.winner) {
-                            this.winner = this.currentSymbol + ` ` + innerArr[3];
-                            let [winningSymbol, winningCombo] = this.winner.split(` `);
+                            this.winner =
+                                this.currentSymbol + ` ` + innerArr[3];
+                            let [winningSymbol, winningCombo] =
+                                this.winner.split(` `);
                             // emit event that gets actioned upon in App.vue
-                            this.$emit(`winnerFound`, winningSymbol, winningCombo);
+                            this.$emit(
+                                `winnerFound`,
+                                winningSymbol,
+                                winningCombo
+                            );
                         }
                     }
                 }
             });
         },
-        // reset all is fired by a watcher and resets teh game, then emits an event to let main app know reset is done.
+        // reset all is fired by a watcher and resets the game, then emits an event to let main app know reset is done.
         resetAll: function () {
             // reset winner message
             (this.winner = ``), (this.currentSymbol = `x`);
