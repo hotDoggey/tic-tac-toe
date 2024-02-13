@@ -1,4 +1,6 @@
-# tic-tac-toe
+# tic-tac-toe (VueJS)
+Small tic tac toe game built in Vue
+Accessible [here](https://tic-tac-toes-lol.netlify.app)
 
 ## Project setup
 ```
